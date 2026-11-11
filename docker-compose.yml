@@ -1,0 +1,16 @@
+services:
+  redis:
+    image: redis:7-alpine
+    container_name: ai_doc_redis
+    ports:
+      - "6379:6379"
+
+  postgres:
+    image: postgres:15-alpine
+    container_name: ai_doc_postgres
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: ai_doc_db
+    ports:
+      - "5433:5432"
